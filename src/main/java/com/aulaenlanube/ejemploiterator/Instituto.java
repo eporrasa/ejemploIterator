@@ -13,11 +13,8 @@ public class Instituto {
         dam.agregarAlumno(new Alumno("Julian", "5555", 15));
         dam.agregarAlumno(new Alumno("Daniel", "66666", 68));
         dam.agregarAlumno(new Alumno("Maria", "77777", 55));
-        
-        Iterator<Alumno> iteratorGrupo = dam.iterator();
-        while (iteratorGrupo.hasNext()) {
-            System.out.println(iteratorGrupo.next());
-        }
+
+        dam.listarAlumnos();
         
     }
 }

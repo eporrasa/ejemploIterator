@@ -21,6 +21,13 @@ public class Grupo implements Iterable<Alumno> {
         this.alumnos.add(newAlumno);
     }
 
+    public void listarAlumnos() {
+        Iterator<Alumno> iteratorGrupo = iterator();
+        while (iteratorGrupo.hasNext()) {
+            System.out.println(iteratorGrupo.next());
+        }
+    }
+
     @Override
     public Iterator<Alumno> iterator() {
         //return alumnos.iterator();
@@ -29,6 +36,10 @@ public class Grupo implements Iterable<Alumno> {
 
             @Override
             public boolean hasNext() {
+                // Valida si en la siguiente posicion el alunmo tiene nia
+                while (posicion < alumnos.size() && alumnos.get(posicion).getNia() == null) {
+                    posicion++;
+                }
                 return posicion < alumnos.size();  //valida si hay otro alumno despues de la posicion actual
             }
 
@@ -38,5 +49,4 @@ public class Grupo implements Iterable<Alumno> {
             }
         };
     }
-
 }
